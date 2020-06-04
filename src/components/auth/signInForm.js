@@ -16,6 +16,8 @@ class SignInForm extends Component {
           type='password' title='Password' placeholder='Password'
           name='password' component={FormFields}/>
 
+          <div className='sign-in-form__line'></div>
+          
           <Field className='sign-in-form__login' 
           onClick={() => console.log('Submit Button')}
           type='submit' title='Login'
