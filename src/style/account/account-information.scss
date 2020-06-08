@@ -1,4 +1,4 @@
-.sign-in {
+.account-information {
   height: 100vh;
   grid-row: content-s/content-e;
   grid-column: s/e;
@@ -14,7 +14,7 @@
   }
 }
 
-.sign-in-form {
+.account-information-form {
 
   & > * {
     grid-column: 1/-1;
@@ -29,19 +29,12 @@
     grid-row: password-s/password-e;
   }
 
-  &__line {
-    grid-row: line-s/line-e;
-    border-top: 1px solid #ccc;
-  }
+  
 
   &__login {
     margin-top: 39px;
     grid-row: login-s/login-e;
   }
 
-  &__details {
-    grid-row: 1/-1;
-    justify-self: end;
-    align-self: start;
-  }
+ 
 }
