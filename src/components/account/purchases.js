@@ -14,8 +14,12 @@ class Purchases extends Component {
       <div className={`purchases ${className}`}>
           {
             this.props.purchases.map(purchase => {
-            return (<div key={purchase._id}>{purchase.title}</div>)
-              })
+              return (
+                  <div key={purchase._id} className='purchases__purchase purchase'>
+                        <img className='purchases__img' src="http://via.placeholder.com/80x80" alt=""/>
+                  </div>
+                )
+            })
           } 
       </div>
     )
