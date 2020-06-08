@@ -2,7 +2,7 @@ import { SET_HEADER_LINKS, SET_NAVBAR_LINKS, CHANGE_NAVBAR_ACTIVE } from '../act
 
 const INITIAL_STATE = {
   headerLinks: [],
-  navbarLinks: []
+  navBarLinks: []
 }
 
 export default function(state = INITIAL_STATE, action) {
@@ -15,10 +15,10 @@ export default function(state = INITIAL_STATE, action) {
     case SET_NAVBAR_LINKS:
           return {
               ...state,
-              navbarLinks: action.payload
+              navBarLinks: action.payload
           }
     case CHANGE_NAVBAR_ACTIVE:
-      const navbarLinks = state.navbarLinks.map(link => {
+      const navBarLinks = state.navBarLinks.map(link => {
           link.active = false;
           
           if(link._id == action.payload)
@@ -28,7 +28,7 @@ export default function(state = INITIAL_STATE, action) {
       });
       return {
           ...state,
-          navbarLinks
+          navBarLinks
       }
     default: 
           return state;

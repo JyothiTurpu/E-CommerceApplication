@@ -25,13 +25,13 @@ class Account extends Component {
         {
           _id: 0,
           title: 'Purchase History',
-          active: false,
+          active: true,
           component: <PurchaseHistory/>
         },
         {
           _id: 1,
           title: 'Account Information',
-          active: true,
+          active: false,
           component: <AccountInformation/>
         }
       ];
@@ -43,6 +43,8 @@ class Account extends Component {
 
   renderContent() {
     let jsx;
+    console.log(this.props);
+
       if(this.props.navBarLinks) {
           this.props.navBarLinks.map(link => {
             if(link.active)
@@ -55,7 +57,7 @@ class Account extends Component {
 
   render(){
     return(
-      <div>
+      <div className='account'>
           {
             this.renderContent()
           }
@@ -67,6 +69,7 @@ class Account extends Component {
 
 
 function mapStateToProps(state) {
+  console.log(state);
   const { headerLinks, navBarLinks } = state.HeaderNavBar;
   return { headerLinks, navBarLinks }
 }

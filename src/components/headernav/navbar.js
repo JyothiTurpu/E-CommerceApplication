@@ -12,7 +12,7 @@ class NavBar extends Component {
     return(
       <div className='nav-bar'>
         {
-          this.props.navbarLinks.map((link, index) => {
+          this.props.navBarLinks.map((link, index) => {
             return (
               <a className={`navbar__link ${link.active ? 'green-text' : ''}`} key={index} onClick={() => this.props.changeNavBarActive(link._id)}>
                   {link.title}
@@ -26,8 +26,8 @@ class NavBar extends Component {
 
 }
 function mapStateToProps(state) {
-    const { navbarLinks } = state.HeaderNavBar;
-    return {navbarLinks};
+    const { navBarLinks } = state.HeaderNavBar;
+    return { navBarLinks };
 }
 
 
