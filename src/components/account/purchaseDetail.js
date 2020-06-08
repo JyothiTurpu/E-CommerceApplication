@@ -14,15 +14,7 @@ function PurchaseDetailLabel({className, title, value}) {
     </div>
   )
 }
-// _id: 1,
-//         total: '$8.02',
-//         orderNumber: '123',
-//         orderDate: new Date(),
-//         : '0000 1111 222',
-//         user: {
-//           name: 'Varun Sai',
-//           shippingAddress: '1234 Sea Street' 
-//         }
+
 
 class PurchaseDetail extends Component {
   render() {
@@ -52,6 +44,13 @@ class PurchaseDetail extends Component {
           <PurchaseDetailLabel className='purchase-detail__credit-card' 
           title='Credit Card'
           value={creditCard}/>
+
+          <a className='purchase-detail__track-shipment'>
+          Track Shipment
+          </a>
+          <a className='purchase-detail__print-receipt'>
+          Print Receipt
+          </a>
       </div>
     )
   }
