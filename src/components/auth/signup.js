@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import SignUpForm from './signUpForm';
 import PageTitle from '../pageTitle';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 class SignUp extends Component {
+
+  componentDidMount() {
+      this.props.setHeaderLinks([]);
+      this.props.setNavBarLinks([]);
+  }
+
 
   onSubmit = (fields) => {
     console.log(fields);
   }
+
 
   render() {
     return(
@@ -18,5 +27,5 @@ class SignUp extends Component {
   }
 }
 
-
+SignUp = connect(null, actions)(SignUp);
 export default SignUp;

@@ -16,3 +16,10 @@ export function setNavBarLinks(links) {
     payload: links
   });
 }
+
+export function changeNavBarActive(_id) {
+  return({
+    type: 'CHANGE_NAVBAR_ACTIVE',
+    payload: _id
+  });
+}
