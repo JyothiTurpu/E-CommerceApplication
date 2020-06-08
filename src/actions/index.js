@@ -5,12 +5,14 @@ import {
 } from './headerNavBar';
 
 import {
-  fetchUserPurchases
+  fetchUserPurchases,
+  setPurchaseDetail
 } from './user.js';
 
 export {
   setHeaderLinks,
   setNavBarLinks,
   changeNavBarActive,
-  fetchUserPurchases
+  fetchUserPurchases,
+  setPurchaseDetail
 };
