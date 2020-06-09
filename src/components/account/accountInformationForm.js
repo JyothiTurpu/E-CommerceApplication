@@ -4,6 +4,13 @@ import { FormFields, FormButton ,LongGrayButton } from '../formFields';
 
 
 class AccountInformationForm extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showPasswords: false
+    }
+  }
+
   render() {
     const { className, handleSubmit } = this.props;
     
@@ -36,18 +43,31 @@ class AccountInformationForm extends Component {
           type='zipcode' title='Zipcode' placeholder='Zipcode'
           name='zipcode' component={FormFields}/>
 
+      
+          {
+            this.state.showPasswords ?
 
-          {/* <Field className='account-information-form__password' 
-          type='password' title='Password' placeholder='Password'
-          name='password' component={FormFields}/> */}
+                [
+                    <Field key={0} className='account-information-form__current' 
+                    type='password' title='Current Password' placeholder='Current Password'
+                    name='current' component={FormFields}/>,
 
+                    <Field key={1}className='account-information-form__new' 
+                    type='password' title='New Password' placeholder='New Password'
+                    name='new' component={FormFields}/>,
 
+                    <Field key={2}className='account-information-form__confirm' 
+                    type='password' title='Confirm Password' placeholder='Confirm Password'
+                    name='confirm' component={FormFields}/>
+                ]
+            :
+            <Field className='account-information-form__change-password' 
+            onClick={() => this.setState({showPasswords: true})}
+            type='button' title='Change Password'
+            name='change-password' component={LongGrayButton}/>
+          }
 
-          <Field className='account-information-form__change-password' 
-          onClick={() => console.log('Trying to Show passwords')}
-          type='button' title='Password'
-          name='change-password' component={LongGrayButton}/>
-
+          
       </form>
     );
   }
