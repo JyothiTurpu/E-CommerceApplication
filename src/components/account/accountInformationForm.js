@@ -43,7 +43,8 @@ class AccountInformationForm extends Component {
           type='zipcode' title='Zipcode' placeholder='Zipcode'
           name='zipcode' component={FormFields}/>
 
-      
+          <div className='account-information-form__line'></div>    
+          
           {
             this.state.showPasswords ?
 
@@ -58,12 +59,23 @@ class AccountInformationForm extends Component {
 
                     <Field key={2}className='account-information-form__confirm' 
                     type='password' title='Confirm Password' placeholder='Confirm Password'
-                    name='confirm' component={FormFields}/>
+                    name='confirm' component={FormFields}/>,
+
+                    
+                    <Field key={4} className='account-information-form__update-information' 
+                    onClick={() => this.setState({showPasswords: false})}
+                    type='submit' title='Update Account'
+                    name='update' component={FormButton}/>,
+
+                    <Field key={5} className='account-information-form__cancel' 
+                    onClick={() => this.setState({showPasswords: false})} 
+                    type='button' title='Cancel'
+                    name='cancel' short={true} component={FormButton}/>
                 ]
             :
             <Field className='account-information-form__change-password' 
             onClick={() => this.setState({showPasswords: true})}
-            type='button' title='Change Password'
+            type='button' title='Change Password' labelTitle='Password'
             name='change-password' component={LongGrayButton}/>
           }
 
