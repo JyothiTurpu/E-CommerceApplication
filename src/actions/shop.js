@@ -1,11 +1,12 @@
 import {
-  SET_SHOP_CATEGORIES
+  // SET_SHOP_CATEGORIES
+  SET_NAVBAR_LINKS
 } from './types';
 
 
 export function fetchShopCategories() {
   return ({
-    type: SET_SHOP_CATEGORIES,
+    type: SET_NAVBAR_LINKS,
     payload: [
       {
         _id: 0,
