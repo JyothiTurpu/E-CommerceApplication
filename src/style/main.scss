@@ -32,11 +32,15 @@ body {
 
 @import './layout.scss';
 @import './header-navbar.scss';
-@import './auth/sign-in.scss';
-@import './auth/sign-up.scss';
 @import './page-title.scss';
 @import './form-fields.scss';
 @import './details.scss';
+
+@import './auth/sign-in.scss';
+@import './auth/sign-up.scss';
+
 @import './account/purchase-history.scss';
 @import './account/account-information.scss';
 @import './account/account.scss';
+
+@import './shop/shop.scss';
