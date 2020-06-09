@@ -9,10 +9,17 @@ import {
   setPurchaseDetail
 } from './user.js';
 
+import {
+  fetchShopCategories
+} from './shop';
+
 export {
   setHeaderLinks,
   setNavBarLinks,
   changeNavBarActive,
+
   fetchUserPurchases,
-  setPurchaseDetail
+  setPurchaseDetail,
+  
+  fetchShopCategories
 };
