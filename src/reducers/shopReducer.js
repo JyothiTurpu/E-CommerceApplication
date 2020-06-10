@@ -8,8 +8,7 @@ import {
 const INITIAL_STATE = {
   categories: [],
   products: [],
-  filteredProducts: [],
-  filteredProductsWithQuery: []
+  filteredProducts: []
 };
 
 export default function(state = INITIAL_STATE, action){
@@ -43,14 +42,13 @@ export default function(state = INITIAL_STATE, action){
 
       case FILTER_PRODUCTS_WITH_QUERY:
         var filteredProductsWithQuery = [];
-        console.log(action.payload);
-        // state.products.map(product => {
-        //   if(product.title.includes(action.payload))
-        //     filteredProductsWithQuery.push(product);
-        // })
+        state.products.map(product => {
+          if(product.title.toLowerCase().includes(action.payload.query.toLowerCase()))
+            filteredProductsWithQuery.push(product);
+        })
         return {
           ...state,
-          filteredProductsWithQuery
+          filteredProducts: filteredProductsWithQuery
         }
 
 
