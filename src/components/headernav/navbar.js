@@ -8,13 +8,20 @@ class NavBar extends Component {
     super(props);
   }
 
+  handleOnClick(link) {
+    this.props.changeNavBarActive(link._id)
+    if(this.props.onClick) {
+      this.props.onClick(link._id);
+    }
+  }
+
   render() {
     return(
       <div className='nav-bar'>
         {
           this.props.navBarLinks.map((link, index) => {
             return (
-              <a className={`navbar__link ${link.active ? 'green-text' : ''}`} key={index} onClick={() => this.props.changeNavBarActive(link._id)}>
+              <a className={`navbar__link ${link.active ? 'green-text' : ''}`} key={index} onClick={() => this.handleOnClick(link)}>
                   {link.title}
               </a>
             )
@@ -26,8 +33,8 @@ class NavBar extends Component {
 
 }
 function mapStateToProps(state) {
-    const { navBarLinks } = state.HeaderNavBar;
-    return { navBarLinks };
+    const { navBarLinks, onClick } = state.HeaderNavBar;
+    return { navBarLinks, onClick };
 }
 
 

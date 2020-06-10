@@ -14,14 +14,15 @@ class Shop extends Component {
     ];
     this.props.setHeaderLinks(headerLinks);
     this.props.fetchShopCategories();
-
     this.props.fetchShopProducts();
   }
 
   shouldComponentUpdate(nextProps) {
-    if(this.props != nextProps){
-      this.props.setNavBarLinks(nextProps.categories);
-    } 
+    if(this.props.categories != undefined)
+      this.props.setNavBarLinks(this.props.categories, (_id) => this.props.filterProductsWithCategoryId(_id));
+    else if(nextProps.categories != undefined)
+      this.props.setNavBarLinks(nextProps.categories, (_id) => this.props.filterProductsWithCategoryId(_id));
+
     return true;
   }
 

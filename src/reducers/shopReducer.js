@@ -23,7 +23,6 @@ export default function(state = INITIAL_STATE, action){
         products: action.payload,
       }
     case FILTER_PRODUCTS_WITH_CATEGORY_ID:
-      console.log(action);
       return {
         ...state
       }

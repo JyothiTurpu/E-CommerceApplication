@@ -10,10 +10,13 @@ export function setHeaderLinks(links) {
   });
 }
 
-export function setNavBarLinks(links) {
+export function setNavBarLinks(links, onClick) {
   return({
     type: 'SET_NAVBAR_LINKS',
-    payload: links
+    payload: {
+      links, 
+      onClick: onClick ? onClick : ''
+    }
   });
 }
 
