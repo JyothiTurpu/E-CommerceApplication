@@ -52,6 +52,15 @@ export function fetchShopCategories() {
 
 
 
+export function filterProductsWithQuery(fields) {
+  return({
+    type: FILTER_PRODUCTS_WITH_QUERY,
+    payload: fields
+  })
+}
+
+
+
 
 export function fetchShopProducts() {
   return ({
