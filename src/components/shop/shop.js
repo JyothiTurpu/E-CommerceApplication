@@ -14,7 +14,15 @@ class Shop extends Component {
     ];
     this.props.setHeaderLinks(headerLinks);
     this.props.fetchShopCategories();
+
     this.props.fetchShopProducts();
+  }
+
+  shouldComponentUpdate(nextProps) {
+    if(this.props != nextProps){
+      this.props.setNavBarLinks(nextProps.categories);
+    } 
+    return true;
   }
 
 
@@ -32,7 +40,8 @@ class Shop extends Component {
 
 
 function mapStateToProps(state) {
-  return { state }
+  const { categories } = state.Shop;
+  return { categories }
 }
 
 
