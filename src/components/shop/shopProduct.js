@@ -22,7 +22,7 @@ class ShopProduct extends Component {
                     {description}
                 </div>  
 
-                <GreenPriceTag className='shop-product__back__price' title={`$${price}`}/>
+                <GreenPriceTag className='shop-product__back__price' title={`${price}`}/>
 
                 <Quantity className='shop-product__back__quantity' quantity='1' /> 
                 <div className='shop-product__back__add-to-cart'>
