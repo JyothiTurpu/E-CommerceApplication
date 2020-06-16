@@ -4,6 +4,7 @@ import * as actions from "../../actions";
 import ShopSearchBar from "./shopSearchBar";
 import ShopProduct from "./shopProduct";
 import ShopCart from "./shopCart";
+import CartButton from './cartButton';
 
 class Shop extends Component {
   constructor() {
@@ -12,7 +13,7 @@ class Shop extends Component {
       showCart: true
     }
   }
-  
+
   componentDidMount() {
     const headerLinks = [
       {
@@ -39,12 +40,28 @@ class Shop extends Component {
     this.props.filterProductsWithQuery(fields);
   };
 
+
+
+  handleAddToCart = () => {
+
+    if(document.getElementById('shop-cart').classList.contains('cart-hidden')) {
+      document.getElementById('shop-cart').classList.remove('cart-hidden');
+      // document.getElementById('cart-button').classList.add('cart-hidden');
+    } else {
+      document.getElementById('shop-cart').classList.add('cart-hidden');
+      // document.getElementById('cart-button').classList.remove('cart-hidden');
+    }
+
+  }
+
+
   render() {
     // return <ShopCart className="shop__cart" />;
 
     return (
       <div className="shop">
         <ShopSearchBar className="shop__search-bar" onSubmit={this.onSubmit} />
+        
         <div className="shop__products">
           {this.props.filteredProducts.map((product) => {
             return <ShopProduct {...product} key={product._id} />;
@@ -53,6 +70,7 @@ class Shop extends Component {
         {
           this.state.showCart ? <ShopCart className="shop__cart" /> : ''
         }
+        <CartButton className='shop__cart-button' iconName='cart-plus' onClick={this.handleAddToCart}/>
       </div>
     );
   }
