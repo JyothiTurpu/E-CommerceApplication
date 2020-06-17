@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { FormButton } from '../formFields';
 import history from '../../history';
-import ReviewProducts from '../../style/order/reviewProducts';
+import ReviewProducts from './reviewProducts';
 
 class ReviewForm extends Component {
   render() {
