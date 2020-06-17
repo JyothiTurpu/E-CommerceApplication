@@ -14,7 +14,7 @@ class CartProduct extends Component {
           <div className='cart-product__title'>{title}</div>
           <Quantity className='cart-product__quantity' quantity={quantity}/>
           <a className='cart-product__remove'>Remove</a>
-          <GreenPriceTag className='cart-product__price' title={price}/>
+          <GreenPriceTag className='cart-product__price' title={price * quantity}/>
       </div>
     )
   }

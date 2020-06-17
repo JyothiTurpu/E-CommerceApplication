@@ -25,8 +25,12 @@ function CartContent({className, products}) {
 
 
 function CartFooter({className, products}) {
-  const price = '7.96';
 
+  var subtotal = 0;
+    products.map(cp => {
+      subtotal += (cp.product.price * cp.quantity);
+    })
+    
   return (
     <div className={`${className} cart-footer`}>
         <a className='cart-footer__checkout' onClick={() => history.push('/order/review')}>
@@ -36,7 +40,7 @@ function CartFooter({className, products}) {
           SubTotal
         </div>
         <div className="cart-footer__price">
-          ${price}
+          ${subtotal}
         </div>
     </div>
   )
@@ -61,10 +65,11 @@ class ShopCart extends Component {
 
   render() {
     const { className } = this.props;
+
     return(
       <div id='shop-cart' className={`${className} shop-cart cart-hidden`}>
         <CartButton className='shop-cart__toggle' onClick={this.handleAddToCart} iconName='times'/>
-        <CartContent className='shop-cart__content' products={this.props.cartProducts}/>
+        <CartContent className='shop-cart__content' products={this.props.cartProducts} />
       </div>
     )
   }
