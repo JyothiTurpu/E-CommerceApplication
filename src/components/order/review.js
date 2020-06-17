@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import PageTitle from '../pageTitle';
+import ReviewForm from './reviewForm';
 
 
 class Review extends Component {
@@ -11,11 +12,15 @@ class Review extends Component {
     this.props.setNavBarLinks([]);
   }
 
+  onSubmit = (fields) => {
+    console.log(fields);
+  }
 
   render() {
     return (
         <div className='review'>
           <PageTitle className='review__page-title' title='Order Review'/> 
+          <ReviewForm className='review__form' onSubmit={this.onSubmit}/>
         </div>
     )
   }
