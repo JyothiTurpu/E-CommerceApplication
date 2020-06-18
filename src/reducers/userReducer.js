@@ -2,11 +2,13 @@ import {
   SET_USER_PURCHASES,
   SET_PURCHASE_DETAIL,
   SET_CART_PRODUCTS,
-  ADD_CART_PRODUCT
+  ADD_CART_PRODUCT,
+  AUTHENTICATE_USER
 } from '../actions/types';
 
 const INITIAL_STATE = {
-
+  user: {},
+  cartProducts: [],
   purchases: [],
   purchaseDetail: {
         total: '',
@@ -17,12 +19,18 @@ const INITIAL_STATE = {
           name: '',
           shippingAddress: '' 
         }
-  },
-  cartProducts: []
+  }
 }
 
 export default function(state=INITIAL_STATE, action) {
   switch(action.type) {
+    case AUTHENTICATE_USER:
+      {
+        return {
+          ...state,
+          user: action.payload
+        }
+      }
     case SET_USER_PURCHASES:
       {
         return {
