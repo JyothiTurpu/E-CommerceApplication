@@ -59,4 +59,41 @@
     grid-column: payment-complete-e/-1;
     justify-self: end;
   }
+
+  &__shipping-info {
+    grid-row: name-s;
+    grid-column: payment-complete-e/-1;
+    justify-self: end;
+    transform: translateY(175px);
+  }
+}
+
+.small-text {
+  font-size: 14px;
+}
+
+.shipping-info {
+  width: 240px;
+  height: 150px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 35px 24px 24px;
+  grid-row-gap: 5px;
+
+  & > * {
+    grid-column: 1/-1;
+  }
+
+  &__title {
+
+  }
+
+  &__name {
+
+  }
+
+  &__address {
+
+  }
 }
