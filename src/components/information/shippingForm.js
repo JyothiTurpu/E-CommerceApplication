@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { FormFields, FormButton, FormInput } from '../formFields';
 import history from '../../history';
+import OrderSummary from './orderSummary';
 
 class ShippingForm extends Component {
   render() {
@@ -44,7 +45,7 @@ class ShippingForm extends Component {
           type='submit' title='Use This Address'
           name='use-this-address' component={FormButton}/>
 
-          
+          <OrderSummary className='shipping-form__order-summary'/>
 
       </form>
     );
