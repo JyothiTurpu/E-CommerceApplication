@@ -7,7 +7,6 @@ import {
 } from './types';
 
 export function signIn({email, password}) {
-  console.log(email);
   return({
     type: AUTHENTICATE_USER,
     payload: {

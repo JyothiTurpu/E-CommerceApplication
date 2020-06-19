@@ -10,8 +10,8 @@ import { UnderLinedTitle } from './helper';
 
 class PaymentForm extends Component {
   render() {
-    const { className, handleSubmit } = this.props;
-    
+    const { className, handleSubmit, user } = this.props;
+
     return(
       <form onSubmit={handleSubmit} className={`${className} payment-form`}>
           <Field className='payment-form__name' 
@@ -47,8 +47,8 @@ class PaymentForm extends Component {
 
           <div className="payment-form__shipping-info shipping-info">
                 <UnderLinedTitle className='shipping-info__title' title='Shipping To'/>
-                <div className="shipping-info__name small-text">{this.props.name}</div>
-                <div className="shipping-info__address small-text">{this.props.address}</div>
+                <div className="shipping-info__name small-text">{user.name}</div>
+                <div className="shipping-info__address small-text">{user.address}</div>
           </div>
 
       </form>
@@ -60,10 +60,10 @@ PaymentForm = reduxForm({
   form: 'PaymentForm'
 })(PaymentForm);
 
-function mapStateToProps(state) {
-  const { name, address } = state.User.user;
-  return { name, address }
-}
+// function mapStateToProps(state) {
+//   const { name, address } = state.User.user;
+//   return { name, address }
+// }
 
-PaymentForm = connect(mapStateToProps)(PaymentForm);
+// PaymentForm = connect(mapStateToProps)(PaymentForm);
 export default PaymentForm;

@@ -19,11 +19,16 @@ class Payment extends Component {
     return(
       <div className='payment'>
           <PageTitle className='payment__page-title' title='Payment Information'/>
-          <PaymentForm onSubmit={this.onSubmit} className='payment__form'/>
+          <PaymentForm onSubmit={this.onSubmit} className='payment__form' user={this.props.user}/>
       </div>
     );
   }
 }
 
-Payment = connect(null, actions)(Payment);
+function mapStateToProps(state) {
+  const { user }  = state.User;
+  return { user };
+}
+
+Payment = connect(mapStateToProps, actions)(Payment);
 export default Payment;
